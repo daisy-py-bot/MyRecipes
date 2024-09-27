@@ -1,0 +1,112 @@
+body{
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    background: url('../media/login.png');
+    background-size: cover;
+    height: 100vh;
+   
+    
+}
+header{
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    display: flex;
+    justify-content: space-between;
+    /* background: linear-gradient(to right, white, orange, white); */
+    /* background: linear-gradient(to right, white, black, orange,white, white, white); */
+    margin-top: 20px;
+    margin-bottom: 40px;
+   
+
+}
+
+.logo{
+    display: flex;
+    /* background-color: rgb(127, 245, 48); */
+    background: linear-gradient(to right, green, black, orange);
+    width: 10%;
+    justify-content: center;
+    padding-top: 15px;
+    border-radius: 50%;
+    color: white;
+    font-style: italic;
+    margin-left: 8%;
+
+}
+.logo img{
+    height: 50px;
+    border-radius: 50%;
+}
+
+nav{
+    background-color: orange;
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5%;
+    /* padding-right: 20px; */
+    
+}
+
+nav div{
+    width: 30%;
+    height: fit-content;
+    /* background-color: black; */
+}
+
+nav div a{
+    text-decoration: none;
+    color: white;
+    font-size: 120%;
+}
+
+
+main{
+    /* background: url('../media/login.png'); */
+    /* background-size: cover; */
+    height: 100vh;
+    padding-left: 90px;
+    padding-top: 90px;
+    
+}
+
+main .introMsg{
+    width: 60%;
+    height: 80%;
+    /* margin-top: 100px; */
+    background-color: rgb(9, 9, 9, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.introMsg h1{
+    font-size: 64px;
+    padding-top: 15px;
+}
+
+.introMsg p{
+    font-size: 30px;
+}
+.introMsg a{
+    text-decoration: none;
+    display: flex;
+    
+}
+
+.explore{
+    display: flex;
+    align-items: center;
+    /* width: 140%; */
+    background-color: orange;
+    justify-content: center;
+    color: black;
+    border-radius: 10px;
+}
