@@ -1,51 +1,74 @@
 
 body{
-    margin: 20px;
-}
-header{
-    /* margin-left: 100px;
-    margin-right: 100px; */
-    display: flex;
-    justify-content: space-between;
-    /* background: linear-gradient(to right, white, orange, white); */
-    /* background: linear-gradient(to right, white, black, orange,white, white, white); */
-    margin-top: 20px;
-    margin-bottom: 40px;
-    background-color: rgb(239, 165, 28);
-    border-radius: 5px;
-   
-
-}
-
-.logo{
-    display: flex;
-    /* background-color: rgb(127, 245, 48); */
-    background: linear-gradient(to right, green, black, orange);
-    width: 10%;
-    justify-content: center;
-    padding-top: 15px;
-    border-radius: 50%;
-    color: white;
-    font-style: italic;
-    margin-left: 8%;
-
-}
-.logo img{
-    height: 50px;
-    border-radius: 50%;
-}
-
-
-.burger div{
-    background-color: black;
-    height:2px;
-    width:20px;
-    margin: 5px;
-}
-
-body {
+    margin:4%;
     font-family: Arial, sans-serif;
 }
+
+
+
+/* Style the search sections */
+.searches{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgb(159, 158, 158, 0.2);
+    border-radius: 10px;
+}
+
+.search-container{
+    margin-bottom: 20px; /* Space below the search box */
+    width: 40%;
+    
+}
+
+.search-container h1{
+    margin-bottom: 5px; /* Space below the heading */
+}
+
+.search-box input{
+    height: 27px;
+    width: 60%;
+    margin-right: 0;
+   
+}
+
+.search-box .search-button{
+    margin-left: 0; /*remove space between the search input box and the icon*/
+}
+
+
+.popular-searches{
+    width: 35%; /*all popular search to take only 35% width*/
+}
+
+.popular-searches h2 {
+    margin-bottom: 5px; /* Space below the heading */
+    
+}
+
+.search-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap onto the next line */
+}
+
+.search-button {
+    background-color: orange; /* Orange background */
+    color: black; /* White text */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px; /* Padding around the button */
+    margin: 5px; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.search-button:hover {
+    background-color: darkorange; /* Darker shade on hover */
+}
+
+
+/* Style the recipes section */
 
 .recipes {
     display: flex;
@@ -54,16 +77,25 @@ body {
     margin: 20px;
 }
 
+
 .recipe {
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
     text-align: center;
-    width: calc(23.33% - 30px); /* 3 per row with space */
+    width: 20%; /* 4 per row with space */
     margin: 10px 0; /* Adjust for spacing */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s;
     transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.recipe:hover{
+    background-color: rgb(129, 246, 207, 0.4);
+    transform: scale(1.1);
+
 }
 
 .recipe img {
@@ -76,12 +108,11 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    direction: rtl;
 }
 
 .star {
     font-size: 20px;
-    color: lightgray;
+    color: gold;
     cursor: pointer;
 }
 
@@ -89,61 +120,22 @@ input[type="radio"] {
     display: none; /* Hide the radio buttons */
 }
 
-input[type="radio"]:checked ~ .star i {
-    color: gold; /* Color for selected stars */
-}
-
-.star:hover,
-.star:hover ~ .star {
-    color: gold; /* Color for hovered stars */
-}
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .recipe {
-        width: calc(50% - 20px); /* 2 per row on smaller screens */
+        width: 25%; /* 3 per row on small screens */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 960px) {
+    .recipe {
+        width: 38%; /* 2 per row on smaller screens */
+    }
+}
+
+@media (max-width: 580px) {
     .recipe {
         width: calc(100% - 20px); /* 1 per row on very small screens */
     }
-}
-
-.searches{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color: rgb(159, 158, 158, 0.2);
-    border-radius: 10px;
-}
-
-.popular-searches {
-    margin-left: 20px; /* Space between search box and popular searches */
-}
-
-.popular-searches h2 {
-    margin-bottom: 5px; /* Space below the heading */
-}
-
-.search-buttons {
-    display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap onto the next line */
-}
-
-.search-button {
-    background-color: orange; /* Orange background */
-    color: white; /* White text */
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px; /* Padding around the button */
-    margin: 5px; /* Space between buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.search-button:hover {
-    background-color: darkorange; /* Darker shade on hover */
 }
