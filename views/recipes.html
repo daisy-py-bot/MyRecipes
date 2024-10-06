@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/recipes.css">
+    <link rel="stylesheet" href="../css/global_style.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="dashaboard.html">Dashboard</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="index.html" target="_blank">Home</a></li>
+
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- User header -->
+        <div class="header">
+            <h1>Recipes Management</h1>
+        </div>
+
+        <div class="content">
+            <p>Welcome to the Recipes Management Dashboard. Here you can create, read, update, delete recipes information.</p>
+        </div>
+
+
+        <div class="table-container">
+            <!-- Recipe Table -->
+            <table id="recipeTable" class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Date Created</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="ID">1</td>
+                        <td data-label="Title">Spaghetti Carbonara</td>
+                        <td data-label="Author">John Doe</td>
+                        <td data-label="Date Created">2024-10-06</td>
+                        <td data-label="Actions">
+                            <button class="view">View</button>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Button to show the Add Recipe form -->
+        <button id="showAddFormBtn" class="toggle-btn">Add New Recipe</button>
+
+        <!-- Add Recipe Form (hidden by default) -->
+        <div class="form-container" id="addFormContainer" style="display: none;">
+            <h3>Add New Recipe</h3>
+            <form id="addRecipeForm">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+
+                <label for="dateCreated">Date Created:</label>
+                <input type="date" id="dateCreated" name="dateCreated" required>
+
+                <button type="submit">Add Recipe</button>
+            </form>
+        </div>
+
+        
+        <!-- Update Recipe Form (Hidden by default) -->
+        <div class="form-container" id="editFormContainer" style="display: none;">
+            <h3>Edit Recipe</h3>
+            <form id="editRecipeForm">
+                <input type="hidden" id="editRecipeId" name="id">
+        
+                <label for="editTitle">Title:</label>
+                <input type="text" id="editTitle" name="title" required>
+        
+                <label for="editAuthor">Author:</label>
+                <input type="text" id="editAuthor" name="author" required>
+        
+                <label for="editDateCreated">Date Created:</label>
+                <input type="date" id="editDateCreated" name="dateCreated" required>
+        
+                <button type="submit">Update Recipe</button>
+            </form>
+        </div>
+        
+    </div>
+    <script src="../js/recipes.js"></script>
+
+</body>
+
+</html>

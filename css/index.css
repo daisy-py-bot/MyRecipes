@@ -3,63 +3,6 @@ body{
     flex-direction: column;   
 }
 
-header{
-    margin-left: 2%;
-    margin-right: 2%;
-    display: flex;
-    justify-content: space-between;
-    height: 60px;
-    margin-top: 15px;
-   
-}
-
-
-.logo{
-    display: flex;
-    background: linear-gradient(to right, green, black, orange);
-    width: 5%;
-    justify-content: center;
-    padding-top: 15px;
-    border-radius: 50%;
-    color: white;
-    font-style: italic;
-    margin-left: 8%;
-    font-size: 11px;
-    width: fit-content;
-
-}
-.logo img{
-    height: 30px;
-    border-radius: 50%;
-}
-
-nav{
-    display: flex;
-    width: 30%;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 3%;    
-}
-
-
-
-
-nav div{
-    width: 30%;
-    height: fit-content;
-    /* background-color: black; */
-}
-
-nav div a{
-    text-decoration: none;
-    color: black;
-    font-size: 120%;
-}
-nav div a:hover{
-    color: brown;
-}
-
-
 main{
     background: url('../media/login.png');
     height: 80vh;

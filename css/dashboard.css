@@ -1,381 +1,225 @@
 
-/* Style the header */
-header{
-    height: 120px;
-    background: gray;
+
+  /* Global styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.head-info{
+body {
     display: flex;
-    justify-content: space-between;
-    /* background: rgb(10, 10, 10, 0.8) ; */
-    /* background-color: rgb(0, 0, 128, 0.8); */
-    background: gray;
-    margin-top: 2%;
-
+    min-height: 100vh;
+    font-size: 16px;
 }
 
-/* Logo */
-.logo{
+
+/* Grid styling */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Number of Users and Recipes */
+.box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.count {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Graph box */
+.box-graph {
+    text-align: center;
+}
+
+/* Top 5 Users styling */
+.user-profile {
     display: flex;
-    background: linear-gradient(to right, green, black, orange);
-    justify-content: center;
-    padding-top: 15px;
-    border-radius: 50%;
-    color: white;
-    font-style: italic;
-    margin-left: 8%;
-    font-size: 11px;
-    width: fit-content;
-    height: fit-content;
-
-}
-
-.logo img{
-    height: 28px;
-    border-radius: 50%;
-}
-
-/* Navigation bar */
-nav{
-    display: flex;
-    background: white;
-    width: 60%;
-
-
-}
-
-nav ul{
-    display: flex;
-    gap:40%;
-    padding-left: 40%;
-}
-
-nav ul li{
-    list-style: none;
-}
-
-nav ul li a{
-    text-decoration: none;
-    color:black;
-    font-weight: bolder;
-    font-size: 20px;
-    transition: transform 0.3s;
-}
-
-nav ul li a:hover{
-    color:rgb(163, 67, 8);
-    transform: scale(1.5);
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
-}
-
-main{
     align-items: center;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
 }
 
-
-section{
-    height: 120vh;
-    width: 100%;
-
-}
-
-
-/* SECTION 1: style the statistics section */
-.numbers{
-    display: flex;
-    background-color: rgb(27, 45, 151);
-    width: 100%;
-    flex-direction: column;
-}
-
-.numbers .stats-infor{
-    width: 50%;
-    display: flex;
-    align-self: center;
-    color: white;
-    text-align: center;
-    font-size: 20px;
-    background-color: navy;
-    border-radius: 10px;
-    margin-top: 2%;
-}
-/* container with the circles */
-.stats{
-    /* background-color: rgb(27, 45, 151); */
-    display: flex;
-    width: 100%;
-    height: 90%;
-}
-
-/* container of the cirlce */
-.stats .nums{
-    width: 50%;
-    /* background-color: rgb(27, 45, 151); */
-    display: flex;
-    justify-content: center;
-
-}
-
-
-/* outer circle */
-.stats .nums .outer-circle{
-    height: 70%;
-    width: 64%;
-    background-color: aliceblue;
+.user-profile img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    margin-top: 20%;
-    display: flex;
-    justify-content: center;
-
+    margin-right: 10px;
 }
 
-/*  inner circle*/
-.stats .nums .inner-circle{
-    height: 80%;
-    width: 80%;
-    background-color: rgb(27, 45, 151);
-    border-radius: 50%;
-    margin-top: 12%;
-    display: flex;
-    justify-content: center;
-    transition: transform 0.3s;
-
+.full-name {
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
-.stats .nums .inner-circle:hover{
-    transform: scale(1.1);
-    background-color: navy;
+.username {
+    font-size: 0.9rem;
+    color: #555;
 }
 
-/* statistics inside the circle */
-.stats .nums .inner-circle .statistic{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+/* Styling the link */
+.user-link {
+    text-decoration: none;
+    color: inherit; /* Inherits the color from the surrounding text */
 }
 
-.stats .nums .inner-circle .statistic h1{
-    font-size: 150px;
-    margin-bottom: 0;
-    margin-top: 0;
-    color: white;
-}
-
-
-.stats .nums .inner-circle .statistic p{
-    font-size: 25px;
-    color: white;
+.user-link:hover .full-name {
+    color: #007BFF; /* Change color on hover */
 }
 
 
 
-/* SECTION 2:   style the statistics section */
-.graph{
-    background-color: rgb(2, 233, 246, 0.2);
-    /* background: linear-gradient(to bottom, blue, gray); */
-}
 
-.bar-graph{
-    display: flex;
-    width: 80%;
-    align-self: center;
-    background-color: rgb(10, 10, 10, 0.1) ;
- 
-}
-
-/* chart title */
-.graph-title{
-    text-align: center; 
-    margin-top: 10%; 
-    margin-bottom: 4%; 
-    color: navy;font-size: 60px;
-    margin-bottom: 0;
-}
-
-
-/* chart */
-.chart-container {
+/* CHART: styling for the chart container */
+.bar-chart {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    height: 500px; /* Height of the chart */
-    width: 100%; /* Full width for the chart */
-    border-left: 2px solid black; /* Y-axis */
-    border-bottom: 2px solid black; /* X-axis */
-    padding: 2%;
-  }
-  
-.bar {
-    width: 6%;
-    background-color: #3498db;
-    /* background-color: rgb(27, 45, 151); */
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    height: 50vh; /* Responsive height relative to the viewport */
+    max-height: 400px; /* Maximum height for larger screens */
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     position: relative;
-    transition: background-color 0.3s ease;
+    width: 100%; /* Make chart container take full width */
 }
-  
-  .bar span {
-    writing-mode: vertical-rl; /* Rotates text vertically */
-    text-align: center;
-    font-size: 12px;
-    color: rgb(40, 25, 25);
-    padding-bottom: 5px;
-    font-size: 18px;
-  }
-  
-  .bar:hover {
-    background-color: #f39c12;
-  }
-  
-  .bar:hover span {
-    color: #fff;
-  }
 
-  .bar::before {
+/* Styling each bar */
+.bar {
+    flex: 1; /* Each bar will take up equal space */
+    max-width: 60px; /* Set maximum width for bars on large screens */
+    margin: 0 10px; /* Space between bars */
+    background-color: rgba(54, 162, 235, 0.6);
+    transition: height 2s ease-out;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+/* Initially hide the value */
+.bar::before {
     content: attr(data-value);
     position: absolute;
-    top: -20px;
-    background-color: #333;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 12px;
-    visibility: hidden;
-  }
-  
-  .bar:hover::before {
-    visibility: visible;
-  }
-  
-  
-
-
-
-
-/* SECTION 3: style the statistics section */
-.top-users{
-    background-color: black;
-    /* display: flex; */
+    top: -30px;
+    font-size: 0.8rem;
+    color: #333;
+    display: none; /* Initially hidden */
 }
 
-.all-users{
-    display: flex;
-    flex-direction: column;
-}
-.users{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 96%;
-    /* background-color: rgb(170, 61, 61); */
-    align-self: center;
-    padding: 1%;
-    /* height: 80%; */
-}
-.user{
-    width: 15%;
-    /* height: 100px; */
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    align-items: center;
-    height: 80%;
-    
-
-    transform-style: preserve-3d;
-    transition: transform 0.6s; /* Flip speed */
-    position: relative;
-    
+/* Show the value when hovered */
+.bar:hover::before {
+    display: block;
 }
 
-/* container with user image */
-.user-img{
-    width: fit-content;
-    height: 100%;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    
-}
-
-/* user image */
-.user-img img{
-    width: 50%;
-    height: 50%;
-    border-radius: 50%;
-    margin-top: 5px;
-    
-}
-
-.user-stars {
-    display: flex;
-    justify-content: center;
-    margin-top: 7px;
-}
-
-.star {
-    font-size: 30px;
-    color: gold;
-    cursor: pointer;
-}
-
-input[type="radio"] {
-    display: none; /* Hide the radio buttons */
-}
-
-
-.user-container {
-     /* This gives the 3D effect */
-    /* perspective: 1000px; */
-    /* width: 250px;
-    height: 300px; */
-}
-
-/* .user {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s; 
-} */
-
-.user:hover {
-    transform: rotateY(180deg); /* Flip the card */
-}
-
-.user-front, .user-back {
+.bar::after {
+    content: attr(data-month);
     position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Hide the back when viewing front */
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg); /* Rotate and center the month name */
+    font-size: 0.8rem;
+    color: #333;
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-align: center;
 }
 
-.user-front {
-    /* Front side of the card */
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+/* Animation on hover */
+.bar:hover {
+    background-color: rgba(54, 162, 235, 1);
 }
 
-.user-back {
-    /* Back side of the card (will be hidden until hover) */
-    background-color: #3498db;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: rotateY(180deg); /* Rotate the back side */
-    border: 2px solid #ccc;
-    border-radius: 10px;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .bar-chart {
+        height: 40vh; /* Reduce height for smaller screens */
+        padding: 5px; /* Less padding on small screens */
+    }
+    .bar {
+        margin: 0 5px; /* Reduce spacing between bars */
+    }
+    .bar::after {
+        font-size: 0.7rem; /* Reduce month name font size */
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+    
+    .sidebar h2 {
+        font-size: 20px;
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+}
+
+
+/* Responsive design for tablet */
+@media (max-width: 1000px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 150px;
+    }
+
+    .sidebar h2 {
+        font-size: 18px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+
+    .main-content {
+        margin-left: 150px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
 }

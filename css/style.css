@@ -7,36 +7,6 @@ body{
 }
 
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 90px;
-    padding-right: 90px;
-    background: linear-gradient(to left, rgb(124, 114, 114, 0.1), rgb(75, 73, 73, 0.1));
-
-
-}
-nav ul{
-    display: flex;
-    gap:10px;
-}
-
-nav ul li{
-    list-style: none;
-}
-
-nav ul li a{
-    text-decoration: none;
-    color:black;
-    font-weight: bolder;
-}
-
-nav ul li a:hover{
-    color:rgb(163, 67, 8);
-    transform: scale(1.5);
-}
-
 .burger{
     display: none;
 

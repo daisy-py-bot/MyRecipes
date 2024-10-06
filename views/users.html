@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/users.css">
+    <link rel="stylesheet" href="../css/global_style.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="dashaboard.html">Dashboard</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="index.html" target="_blank">Home</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- User header -->
+        <div class="header">
+            <h1>User Management</h1>
+        </div>
+
+        <div class="content">
+            <p>Welcome to the User Management Dashboard. Here you can update, delete users information.</p>
+        </div>
+
+
+        <div class="container">
+    
+            <!-- User Table -->
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User rows will be dynamically generated here (from js)-->
+                </tbody>
+            </table>
+
+    
+            <!-- Edit User Modal -->
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <h2>Edit User</h2>
+                    <form id="editForm">
+                        <input type="hidden" id="editUserId">
+                        <label for="editUserName">Name:</label>
+                        <input type="text" id="editUserName" required>
+                        <label for="editUserEmail">Email:</label>
+                        <input type="email" id="editUserEmail" required>
+                        <button type="submit">Update User</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        
+    </div>
+    <script src="../js/users.js"></script>
+</body>
+
+</html>
