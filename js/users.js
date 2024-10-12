@@ -26,12 +26,6 @@ function loadUsers() {
     });
 }
 
-// View user details
-function viewUser(id) {
-    const user = users.find(u => u.id === id);
-    alert(`ID: ${user.id}\nName: ${user.name}\nEmail: ${user.email}`);
-}
-
 // Open modal to edit user
 function editUser(id) {
     const user = users.find(u => u.id === id);
@@ -43,7 +37,13 @@ function editUser(id) {
     document.getElementById('editModal').style.display = 'flex';
 }
 
-// Save updated user
+// Validate email using regex
+function validateEmail(email) {   
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+}
+
+// Add event listener for form submission
 document.getElementById('editForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -51,16 +51,49 @@ document.getElementById('editForm').addEventListener('submit', function(e) {
     const updatedName = document.getElementById('editUserName').value;
     const updatedEmail = document.getElementById('editUserEmail').value;
 
-    // Find user and update details
-    const userIndex = users.findIndex(u => u.id === id);
-    users[userIndex].name = updatedName;
-    users[userIndex].email = updatedEmail;
+    const emailErrorElement = document.getElementById('email-error-message');
 
-    loadUsers(); // Reload the table
+    // Clear previous error message
+    emailErrorElement.textContent = '';
 
-    // Close modal
-    document.getElementById('editModal').style.display = 'none';
+    // Validate email before updating
+    if (!validateEmail(updatedEmail)) {
+        emailErrorElement.textContent = 'Invalid email address.';
+        emailErrorElement.classList.add('error');
+    } else {
+        emailErrorElement.textContent = '';
+        emailErrorElement.classList.remove('error');
+
+        // Find and update the user
+        const userIndex = users.findIndex(u => u.id === id);
+        users[userIndex].name = updatedName;
+        users[userIndex].email = updatedEmail;
+
+        loadUsers(); // Reload the table with updated data
+
+        // Close the modal
+        document.getElementById('editModal').style.display = 'none';
+    }
 });
+
+
+function viewUser(id) {
+    const user = users.find(u => u.id === id);
+    if (!user) {
+        alert(`User with ID ${id} not found`);
+        return; // Exit the function if the user doesn't exist
+    }
+
+    // Create a message with user information
+    const userInfo = `
+        User ID: ${user.id}
+        Name: ${user.name}
+        Email: ${user.email}
+    `;
+
+    // Show the alert with user information
+    alert(userInfo);
+}
 
 // Delete user
 function deleteUser(id) {
@@ -72,10 +105,14 @@ function deleteUser(id) {
     }
 }
 
+
+
 // Close the modal
 document.getElementById('closeModal').addEventListener('click', function() {
     document.getElementById('editModal').style.display = 'none';
 });
+
+
 
 // Load users on page load
 window.onload = loadUsers;

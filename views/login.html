@@ -39,17 +39,19 @@
         </div>
 
         <!-- SIGN UP FORM -->
-        <div class="signup-form">
+        <div class="signup-form" id="login-form">
             <form action="../db/signup.php" method="post">
                 <h1 style="text-align: center; margin-bottom: 15px; padding-top: 20px;">Welcome Back!</h1>
                 <!-- <p style="margin-top: 0px; font-size: 16px; text-align: center;">Log in to access your recipe collection <br>and more!</p> -->
 
                 <label for="username">Username</label>
-                <input type="text" name="username" required placeholder="Enter your username">
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+                <span id="username-error-message" class="error"></span>
                 
 
                 <label for="password">Password</label>
-                <input type="password" name="password" required min="8" placeholder="Enter your password">
+                <input type="password" id="password" name="password" required min="8" placeholder="Enter your password">
+                <span id="password-error-message" class="error"></span> 
 
 
                 <div style="font-size: 18px; display: flex; align-items: center; justify-content: space-between;">
@@ -93,6 +95,6 @@
 
     </footer>
       
-    
+    <script src="../js/login.js"></script>
 </body>
 </html>

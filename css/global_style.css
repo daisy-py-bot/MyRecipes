@@ -158,3 +158,13 @@
 body {
     padding-top: 60px; /* Adjust based on header height */
 }
+
+.valid{
+    color: rgb(75, 215, 75);
+    font-size: 12px;
+}
+
+.error{
+    color: red;
+    font-size: 12px;
+}

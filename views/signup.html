@@ -51,13 +51,16 @@
                 <input type="text" name="lastname" required placeholder="Enter your lastname">
 
                 <label for="username">Username</label>
-                <input type="text" name="username" required placeholder="Enter your username">
+                <input type="text" name="username" id="username" required placeholder="Enter your username">
+                <span id="username-error-message" class="error"></span>
                 
                 <label for="email">Email</label>
-                <input type="email" name="email" required placeholder="Enter your email">
+                <input type="email" name="email" id="email" required placeholder="Enter your email">
+                <span id="email-error-message" class="error"></span>
 
                 <label for="password">Password</label>
-                <input type="password" name="password" required min="8" placeholder="Enter your password">
+                <input type="password" name="password" id="password" required min="8" placeholder="Enter your password">
+                <span id="password-error-message" class="error"></span>
 
                 <input type="submit" id="signup-btn">
 
@@ -90,6 +93,6 @@
 
     </footer>
       
-    
+    <script src="../js/signup.js"></script>
 </body>
 </html>

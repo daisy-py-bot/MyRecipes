@@ -26,7 +26,7 @@
     <div class="main-content">
         <!-- User header -->
         <div class="header">
-            <h1>Recipes Management</h1>
+            <h1 style="text-align: center;">Recipes Management</h1>
         </div>
 
         <div class="content">
@@ -47,7 +47,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td data-label="ID">1</td>
                         <td data-label="Title">Spaghetti Carbonara</td>
                         <td data-label="Author">John Doe</td>
@@ -57,19 +57,51 @@
                             <button class="edit">Edit</button>
                             <button class="delete">Delete</button>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
         
+        <!-- Recipe Detail Modal (Hidden by default) -->
+        <div class="modal" id="recipeDetailModal">
+            <div class="modal-content">
+                <h3>Recipe Details</h3>
+                <button id="closeModalBtn" class="close-btn">Close</button>
+                
+                <p><strong>Recipe Title:</strong> <span id="viewTitle"></span></p>
+                <p><strong>Author:</strong> <span id="viewAuthor"></span></p>
+                <p><strong>Date Created:</strong> <span id="viewDateCreated"></span></p>
+
+                <!-- <h4>Ingredients</h4> -->
+                <p><strong>Origin:</strong> <span id="viewOrigin"></span></p>
+                <p><strong>Name:</strong> <span id="viewIngredientName"></span></p>
+                <p><strong>Nutritional Value:</strong> <span id="viewNutritionalValue"></span></p>
+                <p><strong>Allergen Information:</strong> <span id="viewAllergenInfo"></span></p>
+                <p><strong>Shelf Life:</strong> <span id="viewShelfLife"></span></p>
+                <p><strong>Quantity:</strong> <span id="viewQuantity"></span></p>
+                <p><strong>Unit:</strong> <span id="viewUnit"></span></p>
+
+                <h4>Other Information</h4>
+                <p><strong>Preparation Time:</strong> <span id="viewPrepTime"></span> minutes</p>
+                <p><strong>Cooking Time:</strong> <span id="viewCookTime"></span> minutes</p>
+                <p><strong>Serving Size:</strong> <span id="viewServingSize"></span></p>
+                <p><strong>Food Description:</strong> <span id="viewFoodDescription"></span></p>
+                <p><strong>Calories per Serving:</strong> <span id="viewCalories"></span></p>
+                <p><strong>Food Origin:</strong> <span id="viewFoodOrigin"></span></p>
+                <p><strong>Instructions:</strong> <span id="viewInstructions"></span></p>
+                <p><strong>Recipe Image:</strong> <img id="viewRecipeImage" src="" alt="Recipe Image" style="width: 100%; max-width: 300px;" /></p>
+            </div>
+        </div>
+
         <!-- Button to show the Add Recipe form -->
         <button id="showAddFormBtn" class="toggle-btn">Add New Recipe</button>
 
-        <!-- Add Recipe Form (hidden by default) -->
+
+        <!-- Add Recipe Form (extended with more fields) -->
         <div class="form-container" id="addFormContainer" style="display: none;">
             <h3>Add New Recipe</h3>
             <form id="addRecipeForm">
-                <label for="title">Title:</label>
+                <label for="title">Recipe Title:</label>
                 <input type="text" id="title" name="title" required>
 
                 <label for="author">Author:</label>
@@ -78,29 +110,136 @@
                 <label for="dateCreated">Date Created:</label>
                 <input type="date" id="dateCreated" name="dateCreated" required>
 
+                <!-- Ingredient fields -->
+                <div id="ingredientsContainer">
+                    <h4>Ingredients</h4>
+                    <div class="ingredient-item">
+                        <label for="origin">Origin:</label>
+                        <input type="text" id="origin" name="origin" required>
+
+                        <label for="ingredientName">Name:</label>
+                        <input type="text" id="ingredientName" name="ingredientName" required>
+
+                        <label for="nutritionalValue">Nutritional Value:</label>
+                        <input type="text" id="nutritionalValue" name="nutritionalValue" required>
+
+                        <label for="allergenInfo">Allergen Information:</label>
+                        <input type="text" id="allergenInfo" name="allergenInfo" required>
+
+                        <label for="shelfLife">Shelf Life:</label>
+                        <input type="text" id="shelfLife" name="shelfLife" required>
+
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" required>
+
+                        <label for="unit">Unit:</label>
+                        <input type="text" id="unit" name="unit" required>
+                    </div>
+                </div>
+
+                <label for="prepTime">Preparation Time (minutes):</label>
+                <input type="number" id="prepTime" name="prepTime" required>
+
+                <label for="cookTime">Cooking Time (minutes):</label>
+                <input type="number" id="cookTime" name="cookTime" required>
+
+                <label for="servingSize">Serving Size:</label>
+                <input type="text" id="servingSize" name="servingSize" required>
+
+                <label for="foodDescription">Food Description:</label>
+                <textarea id="foodDescription" name="foodDescription" required></textarea>
+
+                <label for="calories">Calories per Serving:</label>
+                <input type="number" id="calories" name="calories" required>
+
+                <label for="foodOrigin">Food Origin:</label>
+                <input type="text" id="foodOrigin" name="foodOrigin" required>
+
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions" required></textarea>
+
+                <label for="recipeImage">Recipe Image URL:</label>
+                <input type="text" id="recipeImage" name="recipeImage" required>
+
                 <button type="submit">Add Recipe</button>
             </form>
         </div>
 
-        
-        <!-- Update Recipe Form (Hidden by default) -->
+
+
+        <!-- Edit Recipe Form  -->
         <div class="form-container" id="editFormContainer" style="display: none;">
             <h3>Edit Recipe</h3>
             <form id="editRecipeForm">
                 <input type="hidden" id="editRecipeId" name="id">
-        
-                <label for="editTitle">Title:</label>
+                
+                <label for="editTitle">Recipe Title:</label>
                 <input type="text" id="editTitle" name="title" required>
-        
+
                 <label for="editAuthor">Author:</label>
                 <input type="text" id="editAuthor" name="author" required>
-        
+
                 <label for="editDateCreated">Date Created:</label>
                 <input type="date" id="editDateCreated" name="dateCreated" required>
-        
+
+                <!-- Ingredients fields for editing -->
+                <div id="editIngredientsContainer">
+                    <h4>Ingredients</h4>
+                    <div class="ingredient-item">
+                        <label for="editOrigin">Origin:</label>
+                        <input type="text" id="editOrigin" name="origin" required>
+
+                        <label for="editIngredientName">Name:</label>
+                        <input type="text" id="editIngredientName" name="ingredientName" required>
+
+                        <label for="editNutritionalValue">Nutritional Value:</label>
+                        <input type="text" id="editNutritionalValue" name="nutritionalValue" required>
+
+                        <label for="editAllergenInfo">Allergen Information:</label>
+                        <input type="text" id="editAllergenInfo" name="allergenInfo" required>
+
+                        <label for="editShelfLife">Shelf Life:</label>
+                        <input type="text" id="editShelfLife" name="shelfLife" required>
+
+                        <label for="editQuantity">Quantity:</label>
+                        <input type="number" id="editQuantity" name="quantity" required>
+
+                        <label for="editUnit">Unit:</label>
+                        <input type="text" id="editUnit" name="unit" required>
+                    </div>
+                </div>
+
+                <label for="editPrepTime">Preparation Time (minutes):</label>
+                <input type="number" id="editPrepTime" name="prepTime" required>
+
+                <label for="editCookTime">Cooking Time (minutes):</label>
+                <input type="number" id="editCookTime" name="cookTime" required>
+
+                <label for="editServingSize">Serving Size:</label>
+                <input type="text" id="editServingSize" name="servingSize" required>
+
+                <label for="editFoodDescription">Food Description:</label>
+                <textarea id="editFoodDescription" name="foodDescription" required></textarea>
+
+                <label for="editCalories">Calories per Serving:</label>
+                <input type="number" id="editCalories" name="calories" required>
+
+                <label for="editFoodOrigin">Food Origin:</label>
+                <input type="text" id="editFoodOrigin" name="foodOrigin" required>
+
+                <label for="editInstructions">Instructions:</label>
+                <textarea id="editInstructions" name="instructions" required></textarea>
+
+                <label for="editRecipeImage">Recipe Image URL:</label>
+                <input type="text" id="editRecipeImage" name="recipeImage" required>
+
                 <button type="submit">Update Recipe</button>
+                <button id="closeEditBtn" class="close-btn">Close</button>
             </form>
         </div>
+
+
+
         
     </div>
     <script src="../js/recipes.js"></script>

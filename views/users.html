@@ -59,9 +59,11 @@
                     <form id="editForm">
                         <input type="hidden" id="editUserId">
                         <label for="editUserName">Name:</label>
+                        <span id="username-error-message" class="error"></span>
                         <input type="text" id="editUserName" required>
                         <label for="editUserEmail">Email:</label>
                         <input type="email" id="editUserEmail" required>
+                        <span id="email-error-message" class="error"></span>
                         <button type="submit">Update User</button>
                     </form>
                 </div>
