@@ -1,20 +1,5 @@
 
 
-  /* Global styling */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    display: flex;
-    min-height: 100vh;
-    font-size: 16px;
-}
-
-
 /* Basic table styling */
 table {
   width: 100%;
@@ -92,6 +77,7 @@ button:hover {
   width: 100%;
   overflow-x: auto; /* Allows horizontal scroll for smaller screens */
   margin-bottom: 20px;
+  margin-top: 60px;
 }
 
 .responsive-table {
@@ -106,9 +92,12 @@ button:hover {
   text-align: left;
   font-size: 16px;
 }
+h3{
+  text-align: center;
+}
 
 /* Make the table scrollable on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .responsive-table th,
   .responsive-table td {
       font-size: 14px; /* Reduce font size for small screens */
@@ -141,6 +130,12 @@ button:hover {
       width: 120px;
       text-align: right;
       padding-right: 10px;
+  }
+  .table-container{
+    margin-left: 10px;
+  }
+  form{
+    margin: 20px;
   }
 }
 

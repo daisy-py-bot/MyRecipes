@@ -1,34 +1,66 @@
-body{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background: linear-gradient(to bottom, rgba(249, 248, 250, 0.6), rgba(0,0,0,0.4)), url('../media/login.png');
-    background-size: cover;
-    height: 100%;
-    margin: 0;
-}
 
-
-.burger{
-    display: none;
-
-}
-
-.burger div{
-    background-color: black;
-    height:2px;
-    width:20px;
-    margin: 5px;
-}
-
-@media screen and (max-width:768px){
-    .nav-items{
-        display: none;
+/* Media Queries */
+@media only screen and (max-width: 767px) {
+    .heading h1 {
+        font-size: 35px;
     }
 
-    .burger{
-        display: block;
+    .heading p {
+        font-size: 16px;
     }
 
+    .signup-form h1 {
+        font-size: 24px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"],
+    .signup-form input[type="submit"] {
+        font-size: 16px;
+        padding: 8px;
+        margin: 4px;
+    }
+
+    .signup-form p {
+        font-size: 14px;
+        /* margin: 2px; */
+    }
 }
+
+@media only screen and (min-width: 768px) {
+    .heading h1 {
+        font-size: 60px;
+    }
+
+    .heading p {
+        font-size: 18px;
+    }
+
+    .signup-form h1 {
+        font-size: 30px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"],
+    .signup-form input[type="submit"] {
+        /* font-size: 18px; */
+        padding: 12px;
+        font-size: 14px;
+        width: 100%; /* Make input fields take full width */
+        padding: 10px;
+        margin: 6px 0; /* Adjust margins for spacing */
+    }
+
+    .signup-form p {
+        font-size: 16px;
+    }
+    label {
+        font-size: 14px; /* Smaller label font for compact layout */
+    }
+}
+
 
 
 /* FORM */
@@ -78,14 +110,7 @@ form label{
     background-color: rgb(29, 172, 57);
 }
 
-/* ADJUST THE WIDTH OF THE CONTAINER OF THE FORM */
-@media screen and (max-width: 950px) {
-    main .signup-form{
-        min-width: fit-content;
-    
-    }
 
-}
 
 
 /* FOOTER */
