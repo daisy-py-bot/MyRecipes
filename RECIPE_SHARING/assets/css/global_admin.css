@@ -1,0 +1,177 @@
+
+
+/* ADMIN DASHBOARD STYLING */
+/* Sidebar styling */
+.sidebar {
+    width: 20%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin-left: 2%;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+
+.menu-logo {
+    line-height: 0;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu-logo img {
+    max-height: 60px;
+    max-width: 150px;
+    flex-shrink: 0;
+
+  }
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: left;
+    color: #ff9800; /* Optional: Highlight color */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.sidebar ul li a i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.sidebar ul li a span {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: orange;
+}
+
+.sidebar ul li:last-child a {
+    color: #ff5c5c;
+}
+
+.sidebar ul li:last-child a:hover {
+    background-color: rgb(232, 93, 93, 0.3);
+}
+
+
+
+
+/* Main content styling */
+.main-content {
+    margin-left: 25%; 
+    padding-top: 80px; 
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Fixed header */
+.main-content .header {
+    position: fixed;
+    top: 0;
+    left: 26%; 
+    right: 0;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.main-content .header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+
+
+
+/* Responsive Design */
+@media only screen and (max-width: 767px) {
+    .sidebar {
+        width: 60px;
+    }
+    .sidebar h2 {
+        display: none;
+    }
+
+    .sidebar ul li a span {
+        display: none;
+    }
+    .sidebar ul li a i {
+        font-size: 24px;
+        margin-right: 0;
+        margin-left: 0;
+        /* padding-right: 10px; */
+        transition: transform;
+        
+    }
+    .sidebar ul li a i:hover {
+        background-color: transparent;
+        transform: scale(1.1);
+    }
+    .sidebar ul li a:hover {
+        background-color: transparent;
+    }
+    .sidebar ul li:last-child a:hover {
+        background-color: transparent;
+    }
+    .main-content {
+        margin-left: 70px; /* Sidebar shrinks on mobile */
+    }
+    .main-content .header {
+        left: 120px; /* Align with mobile sidebar */
+    }
+
+    .menu-logo {
+        line-height: 0;
+        margin: 0 10px;
+        display: flex;
+        align-self: center;
+      }
+      
+      .menu-logo img {
+        max-height: 30px;
+        max-width: 50px;
+        flex-shrink: 0;
+        align-self: center;
+        justify-self: center;
+      }
+    
+}
+
+
+
+
+
