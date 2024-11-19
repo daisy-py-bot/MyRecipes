@@ -51,7 +51,7 @@
             <!-- <li><a href="../users.php"><i class="fas fa-users"></i><span>Users</span></a></li> -->
             <li><a href="../recipes.php"><i class="fas fa-utensils"></i><span>Recipes</span></a></li>
             <li><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></li>
-            <li><a href="../index.html" target="_blank"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="../../index.php" target="_blank"><i class="fas fa-home"></i><span>Home</span></a></li>
             <li><a href="../logout.html"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
         </ul>
     </div>

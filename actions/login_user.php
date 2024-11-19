@@ -4,7 +4,8 @@
 // ini_set('display_errors', 1); 
 
 // Include configuration file
-include "config.php";
+include '../db/config.php';
+
 // opcache_reset();
 // Start a session
 session_start();

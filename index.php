@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../assets/css/index.css">
-    <link rel="stylesheet" href="../assets/css/global_user.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/global_user.css">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
           
             <!-- logo -->
             <a href="#" class="menu-logo">
-               <img src="../assets/images/mylogo.png" alt="logo">
+               <img src="assets/images/mylogo.png" alt="logo">
             </a>
           
             <!-- menu items -->
@@ -31,7 +31,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="recipe_feed.html">
+                  <a href="view/recipe_feed.html">
                     Recipes
                   </a>
                 </li>
@@ -41,19 +41,19 @@
                   </a>
                 </li>
                 <li>
-                  <a href="admin/dashboard.php">
+                  <a href="view/admin/dashboard.php">
                     Dashboard
                   </a>
                 </li>
               </ul>
               <ul>
                 <li>
-                  <a href="register_user.html">
+                  <a href="view/register_user.html">
                     Sign-up
                   </a>
                 </li>
                 <li>
-                  <a href="login.html">
+                  <a href="view/login.html">
                     Login
                   </a>
                 </li>

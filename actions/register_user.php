@@ -5,7 +5,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1); 
 // echo "hello";
-include "config.php";
+// include "config.php";
+include '../db/config.php';
 
 // Registration endpoint
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lname = isset($data['lname']) ? trim($data['lname']) : null;
     $email = isset($data['email']) ? trim($data['email']) : null;
     $password = isset($data['password']) ? trim($data['password']) : null;
-    $role = 1;
+    // $role = 1;
 
 
     // Check if fields are empty
