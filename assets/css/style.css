@@ -1,0 +1,133 @@
+
+/* Media Queries */
+@media only screen and (max-width: 767px) {
+    .heading h1 {
+        font-size: 35px;
+    }
+
+    .heading p {
+        font-size: 16px;
+    }
+
+    .signup-form h1 {
+        font-size: 24px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"],
+    .signup-form input[type="submit"] {
+        font-size: 16px;
+        padding: 8px;
+        margin: 4px;
+    }
+
+    .signup-form p {
+        font-size: 14px;
+        /* margin: 2px; */
+    }
+    .form{
+        width:100%;
+        padding-left: 0px;
+    }
+    main .signup-form{
+        width: 100%;
+    }
+}
+
+
+
+
+
+/* FORM */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    
+}
+
+main .heading{
+    text-align: center;
+}
+main .signup-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(to bottom, beige 20%, rgb(192, 189, 189)); */
+    width: 40%;
+    border-radius: 10px;
+    flex-direction: column;
+
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    /* background-color: aqua; */
+    font-size: 24px;
+    width: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+form input{
+    /* width: 350px; */
+    width: 90%;
+    /* background-color: blueviolet; */
+    height: 40px;
+    border-radius: 5px;
+    /* margin-left: 8px;
+    margin-right: 8px; */
+}
+form label{
+    padding-top: 20px;
+}
+
+#signup-btn{
+    margin-top: 30px;
+    width: 50%;
+    align-self: center;
+    background-color: rgb(29, 172, 57);
+}
+
+
+
+
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 90px;
+    padding-right: 90px;
+    margin-top: 20px;
+
+}
+
+.footer-items ul{
+    display: flex;
+    list-style: none;
+}
+
+.footer-items ul li{
+    padding-left: 20px;
+    /* background: linear-gradient(to right, rgb(124, 114, 114, 0.1), rgb(75, 73, 73, 0.7)); */
+
+}
+
+.footer-items ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-items ul li a:hover{
+    color: rgb(14, 14, 181);
+}
+
+.brand{
+    font-weight: bolder;
+    color: #f8b231;
+}

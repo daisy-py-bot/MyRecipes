@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const usernameInput = document.getElementById("username")
     const passwordInput = document.getElementById("password")
     const emailInput = document.getElementById("email")
+    const fnameInput = document.getElementById("fname")
+    const lnameInput = document.getElementById("lname")
     
     // add event listeners to the input fields
     usernameInput.addEventListener("input", validateUsername);
@@ -116,8 +118,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
         
+    // form submission
+    const form = document.getElementById('register-form');
+    form.addEventListener('submit', function(event){
+        const fname = usernameInput.value;
+        const lname = usernameInput.value;
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+        const email = emailInput.value;
+
+        // check if any of the input fields is empty
+        if(fname === "" || lname === "" || username === "" || password === "" || email === ""){
+            event.preventDefault();
+            alert("All fields are required.")
+        }
+
+        // check if any of the error messages are present
+        if(document.querySelector('.error') !== null){
+            event.preventDefault();
+            alert("Please correct the errors before submitting.")
+        }
+
+        // converts input fields to json string and post to server
+        
+        
+        
+
+        
 
     
 
 });
-
+});

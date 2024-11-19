@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recipe sharing</title>
-    <link rel="stylesheet" href="../assets/css/global_user.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/global_user.css">
 </head>
 
 <body>
@@ -20,7 +20,6 @@
           
             <!-- logo -->
             <a href="#" class="menu-logo">
-              <!-- <img src="https://wweb.dev/resources/navigation-generator/logo-placeholder.png" alt="My Awesome Website"/> -->
                <img src="../assets/images/mylogo.png" alt="logo">
             </a>
           
@@ -43,7 +42,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="dashboard.html">
+                  <a href="admin/dashboard.php">
                     Dashboard
                   </a>
                 </li>
@@ -66,7 +65,6 @@
     
 
 
-    <!-- <hr style="width: 90%; border-top: 2px solid black; border-bottom: 2px solid black;"> -->
 
 
 
@@ -74,38 +72,42 @@
 
         <!-- HEADING -->
         <div class="heading">
-            <h1 style="margin-bottom: 0px; font-size: 60px;">Join <span class='brand' style=" font-style: italic;">MyRecipes</span> Community!</h1>
-            <p style="margin-top: 0px;">Sign up to become a member and share your recipes.</p>
+            <h1 style="margin-bottom: 0px; font-size: 80px;"><span class='brand' style="font-weight: bolder; font-style: italic; ">MyRecipes</span></h1>
+            <p style="margin-top: 0px;">Ready to Discover and Share New Recipes?.</p>
         </div>
 
         <!-- SIGN UP FORM -->
-        <div class="signup-form">
-            <form action="../actions/register_user.php" method="post">
-                <h1 style="text-align: center; margin-bottom: 0px;">Sign Up!</h1>
+        <div class="signup-form" id="login-form">
+            <form action="" id="login-user-form" method="post">
+                <h1 style="text-align: center; margin-bottom: 15px; padding-top: 20px;">Welcome Back!</h1>
+                <!-- <p style="margin-top: 0px; font-size: 16px; text-align: center;">Log in to access your recipe collection <br>and more!</p> -->
 
-                <label for="firstname">Firstname</label>
-                <input type="text" name="firstname" id="fname" required placeholder="Enter your firstname">
 
-                <label for="lastname">Lastname</label>
-                <input type="text" name="lastname" id="lname" required placeholder="Enter your lastname">
-
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" required placeholder="Enter your username">
-                <span id="username-error-message" class="error"></span>
-                
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" required placeholder="Enter your email">
                 <span id="email-error-message" class="error"></span>
 
+
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" required min="8" placeholder="Enter your password">
-                <span id="password-error-message" class="error"></span>
+                <input type="password" id="password" name="password" required min="8" placeholder="Enter your password">
+                <span id="password-error-message" class="error"></span> 
+
+
+                <div style="font-size: 18px; display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; ">
+                            <input type="radio" style="width: 18px;">
+                            <p>Remember me</p>
+                    </div>
+
+                    <a href="resetpassword">Forgot password?</a>
+                </div>
+
 
                 <input type="submit" id="signup-btn">
 
             </form>
 
-            <p>Already have an account? <a href="login.html">Login</a></p>
+            <p style="padding-top: 10px; padding-bottom: 20px;">Don't have an account? <a href="register_user.html">Signup</a></p>
         </div>
     </main>
 
@@ -132,6 +134,6 @@
 
     </footer>
       
-    <script src="../assets/js/register.js"></script>
+    <script src="../assets/js/login.js"></script>
 </body>
 </html>

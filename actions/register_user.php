@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lname = isset($data['lname']) ? trim($data['lname']) : null;
     $email = isset($data['email']) ? trim($data['email']) : null;
     $password = isset($data['password']) ? trim($data['password']) : null;
-    $role = 2;
+    $role = 1;
 
 
     // Check if fields are empty
@@ -34,8 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        http_response_code(402);
-        echo json_encode(["message" => "Email already registered"]);
+        http_response_code(200);
+        // echo json_encode(["message" => "Email already registered"]);
+        echo json_encode(["redirect" => "http://localhost/RECIPE_SHARING/view/login.html"]);
+
+
+        // redirect to the login page
+         // Redirect to the login page
+        // header("Location: http://localhost/RECIPE_SHARING/view/login.html");
+        
         exit();
     }
     $stmt->close();
@@ -50,7 +57,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         http_response_code(200);
-        echo json_encode(["message" => "User registered successfully"]);
+        // echo json_encode(["message" => "User registered successfully"]);
+        echo json_encode(["redirect" => "http://localhost/RECIPE_SHARING/view/login.html"]);
+
+
+        // redirect to the login page
+        // Redirect to the login page
+        // header("Location: http://localhost/RECIPE_SHARING/view/login.html");
     } else {
         http_response_code(500);
         echo json_encode(["message" => "Error: " . $stmt->error]);
